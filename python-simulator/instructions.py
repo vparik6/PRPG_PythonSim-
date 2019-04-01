@@ -104,7 +104,7 @@ def xor(instruction, registers):
 #i-types
 
 def lui(instruction, registers):
-    registers.r[instruction.rt] = instruction.imm << 16
+    registers.r[instruction.rt] = instruction.imm << 4
     registers.PC += 4
     return registers
 

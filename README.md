@@ -26,6 +26,7 @@ note that immediates/constant will need 4 bits
 * lw
 * srl
 * and
+* ori (I think we need this to go with lui for immediates greater than 4 bits, but it's possible maybe it can be special and have its own format, if need be?)
 
 
 To turn in:

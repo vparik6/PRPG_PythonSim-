@@ -62,6 +62,7 @@ class instr_parsed():
         self.rd = int(converted[4:6], 2)    #destination register
         self.rs = int(converted[6:8],2)     #secondary register
         self.imm = int(converted[4:8])      #immediate value
+        self.rt = int(converted[2:4])       #destination register of immediate
 
 
         if self.op_prefix in r_type_opcodes:

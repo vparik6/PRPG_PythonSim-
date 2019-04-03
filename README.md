@@ -21,7 +21,7 @@ note that immediates/constant will need 4 bits
 * sw
 * mult
 * mask_top
-* andi
+* andi_r3
 * srl
 * or_r
 * addi_r1

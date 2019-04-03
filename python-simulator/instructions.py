@@ -56,6 +56,8 @@ def add_r(instruction, registers):
 def srl(instruction, registers):
     if instruction.imm == 0:
         registers.r[instruction.rd] = registers.r[instruction.rd] >> 1
+    elif instruction.imm == 2:
+        registers.r[instruction.rd] = registers.r[instruction.rd] >> 4
     else:
         registers.r[instruction.rd] = registers.r[instruction.rd] >> 8
     registers.PC += 1
@@ -77,7 +79,10 @@ def sw(instruction, registers, memory):
 
 #status:DONE
 def branch_nz(instruction, registers):
-    registers.PC += registers.r[instruction.imm]
+    if registers.r[6] > 0:
+        registers.PC += registers.r[instruction.imm]
+    else:
+        registers.PC += 1
     return registers
 
 #status:DONE

@@ -1,10 +1,10 @@
-#status: TODO: class holding register values
+import numpy as np
 
 class registers():
     #r now holds the values of the registers, and the index will be the register number
     #0-7 will just end up being ignored (always 0) but that shouldn't mess anything up
     #so if you want to use these you do objectname.r[8] -- which would mean the contents of $8
-    r = [0,0,0,0]
+    r = np.array([0,8,0,0,0,61440,15,-7,-38,-3,-4], dtype=np.int16)
     PC = 0
 
     def print(self):    #print the register name and contents

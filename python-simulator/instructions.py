@@ -1,7 +1,12 @@
 #r-types
 
 #i-types
-def lui(instruction, registers):
+def half_lui(instruction, registers):
+    registers.r[instruction.rt] = instruction.imm << 4
+    registers.PC += 1
+    return registers
+
+def full_lui(instruction, registers):
     registers.r[instruction.rt] = instruction.imm << 8
     registers.PC += 1
     return registers

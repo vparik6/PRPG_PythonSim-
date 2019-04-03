@@ -1,0 +1,17 @@
+#s0 = 79
+half_lui 4 # has implicit register use
+addi 0 15	# register 0 = 15
+or_lui 4 0 # 4 is register destination, or of r4 r0
+
+
+#s0 = 251
+full_lui 1 # r0 = 256
+subi 0 5 # r0 = r0 - 5
+
+#s0 = 118
+half_lui 7
+addi 0 6
+or_lui 4 0 
+
+#s0 = 15
+addi 4 15

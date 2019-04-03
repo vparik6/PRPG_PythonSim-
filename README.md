@@ -14,26 +14,30 @@ for the hardware design:
 * internal ALU diagram showing how instructions get implemented -  done (JB)
 * CPU diagram supporting the single cycle instructions -  is this done?
 
-#Instructions used in PRPG
+#Instructions used in PRPG (UPDATED)
 note that immediates/constant will need 4 bits
-* addi
-* lui
-* andi
-* subi
-* add
-* mult
+* half_lui
+* addi_r0
 * sw
-* lw
+* mult
+* mask_top
+* andi
 * srl
-* and
-* ori (I think we need this to go with lui for immediates greater than 4 bits, but it's possible maybe it can be special and have its own format, if need be?)
-
+* or_r
+* addi_r1
+* branch_nz
+* count_reset
+* lw
+* add_r
+* sub_count
+* subi_r1
+* zero
 
 To turn in:
 
 * instruction table showing controls for single cycle -  in progress (vishal)
 * CPU diagram -  same as the class examples or?
 * ALU diagram -  final look?
-* machine code source file for PRPG -  TODO (sammi)
+* machine code source file for PRPG -  done, just need opcodes (sammi)
 * python source code for simulator -  in progress (sammi, after )
 * report -  TODO (everyone)

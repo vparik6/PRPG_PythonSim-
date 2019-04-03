@@ -1,4 +1,4 @@
-from instructions import *  #import all functions contained in instructions.py
+#from instructions import *  #import all functions contained in instructions.py
 
 square = pow(199,2)
 converted = format(square, '0{}b'.format(16))
@@ -9,7 +9,7 @@ lsb = 0xf & square
 
 loadupper = 0xF << 8
 print('loadupper = ' + bin(loadupper))
-
+'''
 print(bin(lsb))
 print(bin(msb))
 msb = msb >> 8
@@ -18,3 +18,6 @@ seed = msb+lsb
 print(bin(seed))
 
 print(16 >> 4)
+'''
+
+print(bin(int('9'))[2:])

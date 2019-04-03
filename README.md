@@ -35,9 +35,9 @@ note that immediates/constant will need 4 bits
 
 To turn in:
 
-* instruction table showing controls for single cycle -  in progress (vishal)
-* CPU diagram -  same as the class examples or?
+* instruction table showing controls for single cycle -  in progress (vishal & JB)
+* CPU diagram -  in progress (vishal)
 * ALU diagram -  final look?
-* machine code source file for PRPG -  done, just need opcodes (sammi)
-* python source code for simulator -  in progress (sammi, after )
+* compiler: to make machine code source file for PRPG -  DONE
+* python source code for simulator -  DONE - needs testing
 * report -  TODO (everyone)

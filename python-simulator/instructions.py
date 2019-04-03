@@ -10,102 +10,90 @@ def addi_r0(instruction, registers):
     registers.PC += 1
     return registers
 
-#status: TODO
+#status: DONE
 def addi_r1(instruction, registers):
-    operand1 = registers.r[instruction.rs]
-    operand2 = instruction.imm
-    registers.r[instruction.rt] = operand1 + operand2
+    registers.r[1] = registers.r[1] + instruction.imm
     registers.PC += 1
     return registers
 
-#status: TODO
+#status: DONE
 def or_r(instruction, registers):
-    operand1 = registers.r[instruction.rs]
-    operand2 =
-    registers.r[instruction.rt] = operand1 | operand2
+    registers.r[instruction.rd] = registers.r[instruction.rd] | registers.r[instruction.rs]
     registers.PC += 1
     return registers
 
-#status:TODO
+#status:DONE
 def mult(instruction, registers):
-
+    registers.r[instruction.rd] = registers.r[instruction.rd] * registers.r[instruction.rs]
     registers.PC += 1
     return registers
 
-#status:TODO
+#status: DONE
 def mask_top(instruction, registers):
-
+    register.r[instruction.rd] = register.r[5] | register.r[instruction.rs]
     registers.PC += 1
     return registers
 
-#status:TODO
+#status:DONE
 def subi_r1(instruction, registers):
-    operand1 = registers.r[instruction.rs]
-    operand2 = instruction.imm
-
-    registers.r[instruction.rt] = operand1 | operand2
+    registers.r[1] = registers.r[1] - instruction.imm
     registers.PC += 1
     return registers
 
-#status:TODO
-def andi(instruction, registers):
-    operand1 = registers.r[instruction.rs]
-    operand2 = instruction.imm
-
-    registers.r[instruction.rt] = operand1 | operand2
+#status:DONE
+def andi_r3(instruction, registers):
+    registers.r[3] = registers.r[3] & instruction.imm
     registers.PC += 1
     return registers
 
-#status:TODO
+#status:DONE
 def add_r(instruction, registers):
-    operand1 = registers.r[instruction.rs]
-    operand2 = instruction.imm
-
-    registers.r[instruction.rt] = operand1 | operand2
+    registers.r[instruction.rd] = registers.r[instruction.rd] + registers.r[instruction.rs]
     registers.PC += 1
     return registers
 
-#status:TODO
+#status:DONE
 def srl(instruction, registers):
-    operand1 = registers.r[instruction.rs]
-    operand2 = instruction.imm
-
-    registers.r[instruction.rt] = operand1 | operand2
+    if instruction.imm == 0:
+        registers.r[instruction.rd] = registers.r[instruction.rd] >> 1
+    else:
+        registers.r[instruction.rd] = registers.r[instruction.rd] >> 8
     registers.PC += 1
     return registers
 
-#status: TODO
+#status: DONE
 def lw(instruction, registers, memory):
     addr_index = registers.r[instruction.rs]
-    offset = instruction.imm
-    registers.r[instruction.rt] = memory.val[memory.addr.index(addr_index + offset)]
+    registers.r[instruction.rd] = memory.val[memory.addr.index(addr_index)]
     registers.PC += 1
     return registers
 
-#status: TODO
+#status: DONE
 def sw(instruction, registers, memory):
     addr_index = registers.r[instruction.rs]
-    offset = instruction.imm
-    memory.val[memory.addr.index(addr_index + offset)] = registers.r[instruction.rt]
+    memory.val[memory.addr.index(addr_index)] = registers.r[instruction.rd]
     registers.PC += 1
     return memory
 
-#status:TODO
+#status:DONE
 def branch_nz(instruction, registers):
-    pc += 1
+    registers.PC += registers.r[instruction.imm]
     return registers
 
-#status:TODO
+#status:DONE
 def count_reset(instruction, registers):
+    registers.r[6] = 15
     pc += 1
     return registers
 
-#status:TODO
+#status:DONE
 def sub_count(instruction, registers):
+    registers.r[6] -= 1
     pc += 1
     return registers
 
-#status:TODO
+#status:DONE
 def zero(instruction, registers):
+    register.r[instruction.rd] = 0
     pc += 1
     return registers

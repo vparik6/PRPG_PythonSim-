@@ -20,4 +20,4 @@ print(bin(seed))
 print(16 >> 4)
 '''
 
-print(bin(int('9'))[2:])
+print(61440 | 6241)    

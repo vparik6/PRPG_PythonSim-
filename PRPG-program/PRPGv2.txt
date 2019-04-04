@@ -1,7 +1,8 @@
 #the initial seed code goes here, will be different for each seed
-half_lui 3       # has implicit register use, r3 = 3 << 4
-addi_r0 15	       # r0 = 15
-or_r 3 0       # 3 is register destination, or of r3 r0
+half_lui 6       # has implicit register use, r3 = x << 4
+addi_r0 11	       # r0 = 15
+or_r 3 0        # 3 is register destination, or of r3 r0
+
 
 #store s0
 sw 3 1  #contents of r3 stored at address in r1
@@ -24,6 +25,7 @@ sub_count 1
 branch_nz 9
 
 #average
+addi_r1 1
 srl 3 2
 addi_r1 15
 addi_r1 1
@@ -87,10 +89,10 @@ srl 3 0
 andi_r3 1 #check bit 7
 add_r 2 3   #r2 = r2 + r3
 addi_r1 15
-addi_r1 2   #move forward 17 bytes in memory
+addi_r1 3   #move forward 18 bytes in memory
 sw 2 1      #store r2 in that address
 subi_r1 15
-subi_r1 1   #memory update to next seed value, requires subtraction by 16
+subi_r1 2   #memory update to next seed value, requires subtraction by 16
 sub_count 1
 branch_nz 8   #if implicit counter register != 0, pc -= r8
 count_reset

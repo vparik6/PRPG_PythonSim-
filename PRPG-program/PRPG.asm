@@ -1,4 +1,4 @@
-addi $8, $0, 0xFFFF	#first register, seed value
+addi $8, $0, 107	#first register, seed value
 addi $9, $0, 0x2000	#memory address register, will increment by 1
 sw $8, ($9)		#store s0
 

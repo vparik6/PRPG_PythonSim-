@@ -1,4 +1,4 @@
-from instructions import *
+from p3_g_9_instructions import *
 
 #status: test
 def simulate(instructions, register, memory):
